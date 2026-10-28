@@ -1,0 +1,33 @@
+name: Metrics
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Обновление раз в день
+  workflow_dispatch: # Позволяет запускать вручную
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          
+          # --- Основные настройки ---
+          user: pixfox-official # Замените на ваш логин GitHub!
+          template: classic
+          base: header, activity, community # Базовые блоки (календарь добавим отдельно)
+          
+          # --- Ваш изометрический календарь ---
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year # Показывает активность за весь год
+          
+          # --- Оранжевая тема через CSS ---
+          extras_css: |
+            h2 {
+              color: #FF8C00 !important;
+              border-bottom: 2px solid #FF8C00 !important;
+            }
+            .field svg {
+              color: #FF8C00 !important;
+            }

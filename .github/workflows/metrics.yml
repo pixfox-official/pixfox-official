@@ -1,4 +1,4 @@
-name: Metrics
+name: Generate Metrics
 
 on:
   schedule:
@@ -16,7 +16,7 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-          user: pixfox-official # Не забудьте заменить на ваш логин!
+          user: pixfox-official #Не забудьте заменить на ваш логин!
           template: classic
           
           # --- Базовые блоки ---

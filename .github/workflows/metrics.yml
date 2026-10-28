@@ -14,7 +14,8 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           
           # --- Основные настройки ---
-          user: pixfox-official # Замените на ваш логин GitHub!
+          user: pixfox-official
+          debug: yes
           template: classic
           base: header, activity, community # Базовые блоки (календарь добавим отдельно)
           
